@@ -246,7 +246,8 @@ if __name__ == "__main__":
     
     files_to_convert = [
         (backend_dir / "cloud_provider_table.md", project_root / "cloud_provider_table.pdf"),
-        (backend_dir / "model_speeds_table.md", project_root / "model_speeds_table.pdf")
+        (backend_dir / "model_speeds_table.md", project_root / "model_speeds_table.pdf"),
+        (project_root / "DEPLOYMENT.md", project_root / "deployment_guide.pdf")
     ]
     
     success = True

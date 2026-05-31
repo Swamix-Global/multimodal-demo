@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import './App.css'
 
-const API_BASE = 'http://127.0.0.1:8000'
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000'
 const STREAM_TIMEOUT_MS = 60000  // 60 s hard ceiling for the full stream
 
 // ─────────────────────────────────────────────
@@ -91,6 +91,9 @@ async function fetchWithTimeout(url, options, timeoutMs = 30000) {
     }
     if (!navigator.onLine) {
       return { data: null, error: 'No internet connection detected. Please check your network.' }
+    }
+    if (err.message === 'Failed to fetch') {
+      return { data: null, error: 'Failed to connect to the backend server. Please verify your VITE_API_BASE_URL is set correctly in production Vercel environments.' }
     }
     return { data: null, error: err.message || 'Something went wrong. Please retry.' }
   }
@@ -559,6 +562,8 @@ function TextPanel({ accent }) {
         // Keeps partial text but updates stream tag
       } else if (!navigator.onLine) {
         setError('No internet connection detected.')
+      } else if (err.message === 'Failed to fetch') {
+        setError('Failed to connect to the backend server. If in production, ensure your VITE_API_BASE_URL environment variable is set to your active backend address.')
       } else {
         setError(err.message || 'Network error occurred. Please retry.')
       }

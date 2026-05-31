@@ -12,21 +12,23 @@ app = FastAPI()
 # --------------------------
 # CORS
 # --------------------------
+import os
+
+ALLOWED_ORIGINS_ENV = os.getenv("ALLOWED_ORIGINS", "")
+if ALLOWED_ORIGINS_ENV:
+    origins = [o.strip() for o in ALLOWED_ORIGINS_ENV.split(",") if o.strip()]
+    allow_creds = True
+else:
+    # Default to allowing all origins. Since there are no cookies/session credentials required
+    # for the multimodal demo operations, allow_origins=["*"] works flawlessly across all local ports,
+    # Vercel production domains, and preview URLs without CORS blockages.
+    origins = ["*"]
+    allow_creds = False
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://localhost:5174",
-        "http://localhost:5175",
-        "http://localhost:5176",
-        "http://localhost:5177",
-        "http://127.0.0.1:5173",
-        "http://127.0.0.1:5174",
-        "http://127.0.0.1:5175",
-        "http://127.0.0.1:5176",
-        "http://127.0.0.1:5177",
-    ],
-    allow_credentials=True,
+    allow_origins=origins,
+    allow_credentials=allow_creds,
     allow_methods=["*"],
     allow_headers=["*"],
 )
