@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Economical Cloud Hosting Provider Comparison</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background-color: #ffffff;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: #1e293b;
+            background-color: #ffffff;
+            line-height: 1.5;
+            font-size: 10pt;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        h1 {
+            font-size: 20pt;
+            font-weight: 700;
+            color: #0f172a;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .meta {
+            background-color: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 10px 14px;
+            margin-bottom: 20px;
+            border-radius: 0 6px 6px 0;
+            font-size: 9pt;
+            color: #475569;
+        }
+
+        .meta p {
+            margin: 2px 0;
+        }
+
+        h2 {
+            font-size: 14pt;
+            font-weight: 600;
+            color: #0f172a;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 4px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            break-after: avoid;
+        }
+
+        /* Information Dense Table */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+            font-size: 8.5pt;
+            page-break-inside: auto;
+        }
+
+        tr {
+            page-break-inside: avoid;
+            page-break-after: auto;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: #1e293b;
+            font-weight: 600;
+            text-align: left;
+            padding: 8px 10px;
+            border: 1px solid #cbd5e1;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        td {
+            padding: 8px 10px;
+            border: 1px solid #e2e8f0;
+            vertical-align: top;
+            line-height: 1.4;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .provider-name {
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .provider-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-family: 'Fira Code', monospace;
+            font-size: 8pt;
+        }
+
+        /* Recommendations Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 10px 12px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 6px;
+            font-size: 10pt;
+            font-weight: 600;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 9pt;
+            color: #475569;
+            line-height: 1.4;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            font-size: 7.5pt;
+            font-weight: 600;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .badge-cheapest { background-color: #dcfce7; color: #15803d; }
+        .badge-easiest { background-color: #dbeafe; color: #1d4ed8; }
+        .badge-serverless { background-color: #f3e8ff; color: #7e22ce; }
+        .badge-scale { background-color: #fef9c3; color: #a16207; }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 9pt;
+            color: #334155;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #0f172a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Economical Cloud Hosting Provider Comparison</h1>
+        
+        <div class="meta">
+            <p><span class="highlight">Scope:</span> Cost and architectural spec comparison for Python FastAPI backend instances (no GPU, lightweight operations) & Javascript serverless hosts.</p>
+            <p><span class="highlight">Sources:</span> Aggregated developer recommendations from Reddit (r/selfhosted, r/webdev, r/FastAPI) and official documentation.</p>
+            <p><span class="highlight">Last Updated:</span> June 2026</p>
+        </div>
+
+        <h2>📊 Comparison Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Provider</th>
+                    <th style="width: 15%;">Official Site</th>
+                    <th style="width: 15%;">Est. Cost</th>
+                    <th style="width: 25%;">Specs (RAM, CPU, Disk, Network)</th>
+                    <th style="width: 30%;">Notes (Dense Buying Guidance)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="provider-name">Railway</td>
+                    <td><a class="provider-link" href="https://railway.app" target="_blank">railway.app</a></td>
+                    <td>$5 base + usage (~$8 - $15/mo avg)</td>
+                    <td>Scales to 8GB RAM, 8 vCPUs per service. $0.10/GB egress.</td>
+                    <td><strong>Fastest DevOps pipeline.</strong> Auto-builds container from Git. Reddit consensus: Unmatched DX for FastAPI/Postgres. Excellent for rapid MVPs; bandwidth pricing can escalate.</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">Render</td>
+                    <td><a class="provider-link" href="https://render.com" target="_blank">render.com</a></td>
+                    <td>Free tier / $7/mo base (Individual)</td>
+                    <td>512MB RAM, 0.15 vCPU (shared), 100GB egress. Scales to 16GB RAM.</td>
+                    <td><strong>Direct Heroku alternative.</strong> Free tier has a 15-minute spin-down delay. Very stable paid services. Managed Postgres is reliable ($7/mo).</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">Vercel</td>
+                    <td><a class="provider-link" href="https://vercel.com" target="_blank">vercel.com</a></td>
+                    <td>Free (Hobby) / $20/mo (Pro)</td>
+                    <td>1024MB serverless memory. 100GB (Hobby) / 1TB (Pro) bandwidth. 10s-60s timeout.</td>
+                    <td><strong>Gold standard for JS frontends (React/Vite).</strong> Best-in-class git integration and edge performance. Can run serverless FastAPI, but strict timeout limits make it bad for streaming.</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">Cloudflare Workers</td>
+                    <td><a class="provider-link" href="https://workers.cloudflare.com" target="_blank">workers.cloudflare.com</a></td>
+                    <td>Free / $5/mo (includes 10M requests)</td>
+                    <td>JS/WASM serverless. 128MB RAM limit. 50ms CPU execution. <strong>$0 egress fee.</strong></td>
+                    <td><strong>Best value edge functions.</strong> Near-zero cold starts. Extremely popular on Reddit for high-traffic APIs due to $0 bandwidth costs. Cannot run Python/FastAPI natively.</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">DigitalOcean</td>
+                    <td><a class="provider-link" href="https://digitalocean.com" target="_blank">digitalocean.com</a></td>
+                    <td>$4 - $12/mo (Droplet/PaaS)</td>
+                    <td>Baseline Droplet ($6/mo): 1GB RAM, 1 vCPU, 25GB SSD, 1TB bandwidth.</td>
+                    <td><strong>Ideal unmanaged IaaS VPS or simple PaaS.</strong> Reddit consensus: Highly stable developer platform. 1-click Docker setups. Excellent for running persistent databases.</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">Hetzner</td>
+                    <td><a class="provider-link" href="https://hetzner.com" target="_blank">hetzner.com</a></td>
+                    <td>€3.79 - €15/mo (Cloud VPS)</td>
+                    <td>CX22 (€4.50/mo): 4GB RAM, 2 vCPUs, 40GB SSD, 20TB bandwidth.</td>
+                    <td><strong>Unbeatable cost-to-spec ratio.</strong> Reddit consensus: Unmatched raw performance. Unmanaged VPS requires manual Linux/Docker DevOps setup. Best for cost-sensitive production hosting.</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">AWS App Runner / Lambda</td>
+                    <td><a class="provider-link" href="https://aws.amazon.com" target="_blank">aws.amazon.com</a></td>
+                    <td>App Runner: ~$15+/mo; Lambda: Pay-per-request</td>
+                    <td>App Runner base: 1 vCPU, 2GB RAM. Lambda: Up to 10GB RAM, 6 vCPUs.</td>
+                    <td><strong>Hyperscaler standard.</strong> App Runner is a solid, persistent container host for FastAPI. Lambda is ideal for JS serverless. Bandwidth egress costs are high and complex.</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">GCP Cloud Run</td>
+                    <td><a class="provider-link" href="https://cloud.google.com" target="_blank">cloud.google.com</a></td>
+                    <td>Pay-as-you-go (scales to 0; ~$0 - $15/mo avg)</td>
+                    <td>Configurable: Up to 32GB RAM, 8 vCPUs per container. 180K vCPU-sec free/mo.</td>
+                    <td><strong>Best container platform for FastAPI.</strong> Auto-scales to zero instances when idle, completely eliminating baseline costs. Minor cold starts affect initial latency.</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">Azure Container Apps</td>
+                    <td><a class="provider-link" href="https://azure.microsoft.com" target="_blank">azure.microsoft.com</a></td>
+                    <td>Pay-as-you-go (~$10 - $20/mo avg)</td>
+                    <td>Configurable: 0.25 vCPU, 0.5GB RAM up to 4 vCPUs, 8GB RAM.</td>
+                    <td><strong>Enterprise container hosting.</strong> Highly integrated with Microsoft services and Active Directory. Portal interface is sluggish with a steep learning curve.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🏆 Quick Start Recommendations</h2>
+        <div class="grid">
+            <div class="card">
+                <h3><span class="badge badge-cheapest">Cheapest Persistent</span> Hetzner Cloud</h3>
+                <p>CX22 (€4.50/mo) provides 4GB RAM & 2 vCPUs. Outstanding performance per dollar. Requires basic manual Linux/Docker DevOps configuration.</p>
+            </div>
+            <div class="card">
+                <h3><span class="badge badge-easiest">Easiest PaaS</span> Railway & Render</h3>
+                <p>Instantly builds and deploys directly from GitHub hooks. Excellent managed databases. Saves substantial developer ops time for small teams.</p>
+            </div>
+            <div class="card">
+                <h3><span class="badge badge-serverless">Best JS Edge</span> Vercel & Cloudflare</h3>
+                <p>Use Vercel for React/Vite web frontends, and Cloudflare Workers for ultra-light serverless APIs to leverage Cloudflare's <strong>$0 egress bandwidth</strong>.</p>
+            </div>
+            <div class="card">
+                <h3><span class="badge badge-scale">Best Scalable</span> GCP Cloud Run</h3>
+                <p>Exceptional container scaling DX. Scales all the way to zero when inactive, giving you completely free baseline hosting for low-traffic FastAPI containers.</p>
+            </div>
+        </div>
+
+        <h2>💬 Community & Reddit Insights</h2>
+        <ul>
+            <li><span class="highlight">The Egress Bandwidth Trap:</span> Reddit communities (like <code>r/webdev</code>) warn against running start-up backends on AWS/GCP due to unpredictable egress billing. Hetzner (20TB included) and Cloudflare ($0 egress) are widely recommended as safeguards.</li>
+            <li><span class="highlight">The DevOps/Time Tradeoff:</span> Although Hetzner is widely praised for specs, developers emphasize that setting up Docker, Nginx, firewalls, and SSL certificates manually takes hours. Paying the $5-$7/mo base rate for Railway or Render is highly cost-efficient in terms of saved development time.</li>
+        </ul>
+    </div>
+</body>
+</html>
